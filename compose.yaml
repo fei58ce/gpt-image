@@ -1,0 +1,11 @@
+services:
+  gpt-image-playground:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    container_name: gpt-image-playground
+    ports:
+      - "5757:80"
+    environment:
+      API_URL: "https://api.openai.com"
+    restart: unless-stopped
